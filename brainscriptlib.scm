@@ -11,7 +11,7 @@
     (define stack (make-vector stack-size 0))
     ; Get first command and set program counter and stack pointer to initial address
     (let loop ((command (vector-ref program 0)) (program-counter 0) (stack-pointer 0))
-;        (bf-debug-message program-counter stack-pointer command stack)
+        ;(bf-debug-message program-counter stack-pointer command stack)
         ; Execute the current command
         (cond   
             ((equal? command #\>)
@@ -33,7 +33,11 @@
             ((equal? command #\.)
                 (display (integer->char (vector-ref stack stack-pointer))))
             ((equal? command #\,)
-                (vector-set! stack stack-pointer (char->integer (read-char)))) ; needs work
+                (vector-set! stack stack-pointer
+                    (let ((c (read-char)))
+                        (if (eof-object? c)
+                            0
+                            (char->integer c)))))
             ((equal? command #\[)
                 (if (zero? (vector-ref stack stack-pointer))
                     (let loop ((cmd (vector-ref program program-counter))(depth 0))
