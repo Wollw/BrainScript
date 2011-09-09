@@ -6,5 +6,5 @@ Example Brainf*** programs can be found here:
 End input with control-d or however you might enter the EOF character.
 
 Usage:
-    $ ./bf.scm program.b
-    $ ./ts.scm program.troll
+    $ ./bf.scm examples/hello.b
+    $ ./ts.scm examples/hello.troll
