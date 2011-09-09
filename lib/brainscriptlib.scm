@@ -83,7 +83,7 @@
                             (loop (vector-ref program program-counter) depth))))
                 (set! program-counter (+ program-counter 1)))
             (else
-                (bf-error "Invalid command found.")))
+                (bf-error (string-append "Invalid command found at " (number->string program-counter)))))
         ; Increment program-counter if needed (if not changed by [ or ] that is)
         (if (and (not (equal? command #\[)) (not (equal? command #\])))
             (set! program-counter (+ program-counter 1)))
@@ -133,7 +133,7 @@
         "olo"  #\+
         "oll"  #\-
         "loo"  #\.
-        "lol"  #\)
+        "lol"  #\,
         "llo"  #\[
         "lll"  #\]))
     (let loop ((s (ts-read-command file)))
