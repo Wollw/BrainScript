@@ -5,3 +5,4 @@ Example Brainf*** programs can be found here:
 
 Usage:
     $ ./bf.scm program.b
+    $ ./ts.scm program.troll
