@@ -20,5 +20,5 @@
 ; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 ; THE SOFTWARE.
 
-(load "brainscriptlib.scm")
+(load "lib/brainscriptlib.scm")
 (bf-run (bf-get-program-from-file bf-file) bf-stack-size)
