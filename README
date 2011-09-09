@@ -1,8 +1,7 @@
 This is a simple Brainf*** interpreter in Scheme.  Tested using Guile 1.8.7.
 
-Known Issues:
-
-the , command is broken.  This will be fixed.
+Example Brainf*** programs can be found here:
+    http://esoteric.sange.fi/brainfuck/bf-source/prog/ 
 
 Usage:
     $ ./bf.scm program.b

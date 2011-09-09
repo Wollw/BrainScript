@@ -34,7 +34,7 @@
             ((equal? command #\.)
                 (display (integer->char (vector-ref stack stack-pointer))))
             ((equal? command #\,)
-                (vector-set! stack stack-pointer (read-char))) ; needs work
+                (vector-set! stack stack-pointer (char->integer (read-char)))) ; needs work
             ((equal? command #\[)
                 (if (zero? (vector-ref stack stack-pointer))
                     (let loop ((cmd (vector-ref program program-counter))(depth 0))
